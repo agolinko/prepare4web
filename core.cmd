@@ -16,7 +16,7 @@
 	set size=900x600
 	if  not [%2] == [] set size=%2
 	if  not [%3] == [] set quality=%3
-	set DEBUG=1
+	set DEBUG=0
 	rem =======================  
 
 set DST_NAME=web%size%
@@ -60,12 +60,12 @@ if not exist %TARGET_DIR%%TARGET_MASK% (
 %TARGET_DRIVE%
 cd "%TARGET_DIR%" 
 if exist %DST_NAME% (
-	del %DST_NAME%\*.* /q
+	del %DST_NAME%\%TARGET_MASK% /q
 ) else (
 	md %DST_NAME% > nul 
 )
 
-set transform_parameters=-auto-orient -unsharp %unsharp% -quality %quality% -resize %size% -colorspace sRGB
+set transform_parameters=-auto-orient -unsharp %unsharp% -quality %quality% -interlace Plane -resize %size% -colorspace sRGB -define jpeg:dct-method=float -define jpeg:optimize-coding=true
 
 if %PROCESS_MULTIPLE_FILES% == 1 (
 	echo Converting files in %CD% ...
@@ -88,5 +88,4 @@ echo Done.
 
 :eof
 :error
-cd %IM_PATH% 
-pause
+cd %IM_PATH%
