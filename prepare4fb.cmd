@@ -1,7 +1,12 @@
 @echo off
-  rem Image preparation script for Facebook social network.
-  rem Uses optimized parameters
-  rem Guide to facebook image sizes
-  rem http://benrequena.com/facebook-image-sizes-guide/
+:: Image preparation script for Facebook social network.
+:: Uses optimized parameters
+:: Guide to facebook image sizes
+:: http://benrequena.com/facebook-image-sizes-guide/
 
-call core.cmd %1 960x960 85
+call core/config.cmd %1
+set IMG_SIZE=1200x960
+set IMG_QUALITY=90
+set DST_DIR=fb%IMG_SIZE%
+
+call core/core.cmd

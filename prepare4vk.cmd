@@ -1,5 +1,10 @@
 @echo off
-  rem Image preparation script for Vkontakte social network.
-  rem Uses optimized parameters
+::  Image preparation script for Vkontakte social network.
+::  Uses optimized parameters
 
-call core.cmd %1 1280x1024 99
+call core/config.cmd %1
+set IMG_SIZE=1200x1024
+set IMG_QUALITY=99
+set DST_DIR=vk%IMG_SIZE%
+
+call core/core.cmd
