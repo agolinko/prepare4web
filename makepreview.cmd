@@ -1,13 +1,17 @@
+:: Purpose:     Image preparation script for photos preview
+:: Author:      Anton Golinko, 2015
+:: Usage:       Script accepts only one required parameter - filename or folder name
+::              Rest of parameters are specified via local variables
+
 @echo off
-:: Image preparation script preview
 setlocal EnableDelayedExpansion
 
 call core/config.cmd %1
-set IMG_SIZE=800x800
+set IMG_SIZE=900x900
 set IMG_QUALITY=40
 set DST_DIR=preview%IMG_SIZE%
-set IMG_CODING_PARAMETERS=
 set IMG_UNSHARP=
+set IMG_CODING_PARAMETERS=
 set IMG_RESIZE_METHOD=sample
 ::  --------------
 set WATERMARK_FILE=%TEMPORARY_DIR%\wm_logo.png

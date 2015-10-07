@@ -1,10 +1,14 @@
+:: Purpose:     Build watermark logo file
+:: Author:      Anton Golinko, 2015
+:: Usage:       Its only for internal use, do not invoke it directly
+
 @echo off
-if NOT DEFINED CONFIGURED (
+setlocal EnableDelayedExpansion
+if not defined CONFIGURED (
 	echo HELP
 	pause
 	goto eof
 )
-setlocal EnableDelayedExpansion
 
 if [%WATERMARK_SIZE%] == [] set WATERMARK_SIZE=250x150
 if ["%WATERMARK_TEXT%"] == [""] set WATERMARK_TEXT="@watermark.txt"

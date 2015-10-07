@@ -1,14 +1,13 @@
+:: Purpose:     CORE script
+:: Author:      Anton Golinko, 2015
+:: Usage:       Its only for internal use, do not invoke it directly
+
 @echo off
-:: ===================================
-:: * Copyright (C) 2015 Anton Golinko
-:: * vk.com/anton.golinko
-:: * fb.com/anton.golinko
-:: * 500px.com/antongolinko
-:: ===================================
 setlocal EnableDelayedExpansion
-if NOT DEFINED CONFIGURED (
-	echo HELP
-	pause
+if not defined CONFIGURED (
+	echo This script is for internal purposed only. Do not invoke it directly.
+	echo Please use prepare4web, prepare4vk, prepare4fb scripts instead
+
 	goto eof
 )
 
@@ -27,8 +26,8 @@ if [%DEBUG%]==[1] (
 	echo.
 )
 
-if not exist %SRC_PATH%%SRC_MASK% (
-    echo %SRC_PATH%%SRC_MASK% does not exists, or no such files.
+if not exist "%SRC_PATH%%SRC_MASK%" (
+    echo %SRC_PATH%%SRC_MASK% does not exist, or no such files.
 	goto eof
 )
 
@@ -46,10 +45,10 @@ if [%DEBUG%]==[1] (
 :: =======================================
 %SRC_DRIVE%
 cd "%SRC_PATH%"
-if exist %DST_DIR% (
-	del %DST_DIR%\%SRC_MASK% /q
+if exist "%DST_DIR%" (
+	del "%DST_DIR%\%SRC_MASK%" /q
 ) else (
-	md %DST_DIR% > nul
+	md "%DST_DIR%" > nul
 )
 
 if %PROCESS_MULTIPLE_FILES% == 1 (
