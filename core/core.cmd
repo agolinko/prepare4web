@@ -26,7 +26,7 @@ if [%DEBUG%]==[1] (
 	echo.
 )
 
-if not exist "%SRC_PATH%%SRC_MASK%" (
+if not exist "%SRC_DRIVE%%SRC_PATH%%SRC_MASK%" (
     echo %SRC_PATH%%SRC_MASK% does not exist, or no such files.
 	goto eof
 )
