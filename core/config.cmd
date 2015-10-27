@@ -25,7 +25,7 @@ if /I "%dirattr%"=="d" (
 	set SRC_MASK=*.jpg
 	set PROCESS_MULTIPLE_FILES=1
 ) else (
-	set SRC_PATH=%~p1
+	set SRC_PATH=%~d1%~p1
 	set SRC_MASK=%~nx1
 	set PROCESS_MULTIPLE_FILES=0
 )

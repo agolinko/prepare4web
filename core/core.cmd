@@ -26,7 +26,7 @@ if [%DEBUG%]==[1] (
 	echo.
 )
 
-if not exist "%SRC_DRIVE%%SRC_PATH%%SRC_MASK%" (
+if not exist "%SRC_PATH%%SRC_MASK%" (
     echo %SRC_PATH%%SRC_MASK% does not exist, or no such files.
 	goto eof
 )
@@ -66,7 +66,7 @@ echo Clearing EXIF....
   -artist -copyright -make -model ^
   -exposuretime -fnumber -exposureprogram -exposuremode -iso -shutterspeedvalue -aperturevalue -exposurecompensation -isospeed -meteringmode ^
   -datetimeoriginal -createdate ^
-  -FocalLength -FocalLengthIn35mmFormat -lensinfo -lensmake -lensmodel "%DST_DIR%\%SRC_MASK%"
+  -FocalLength -FocalLengthIn35mmFormat -lensinfo -lensmake -lensmodel "%DST_DIR%\%SRC_MASK%" @>nul
 if %ERRORLEVEL% GEQ 1 goto error
 
 echo done.
