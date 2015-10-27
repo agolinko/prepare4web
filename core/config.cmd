@@ -5,7 +5,7 @@
 @echo off
 
 set CONFIGURED=1
-set DEBUG=0
+set DEBUG=1
 set IM_PATH=%~dp0bin\
 set SAVED_CURRENT_PATH=%~dp0
 
@@ -35,6 +35,6 @@ set DST_DIR=web%IMG_SIZE%
 set WATERMARK_FILE=
 SET TEMPORARY_DIR=%TEMP%\prepare4web
 if not exist "%TEMPORARY_DIR%" (
-    md "%TEMPORARY_DIR%">nul
+    md "%TEMPORARY_DIR%" 2>nul
 )
 

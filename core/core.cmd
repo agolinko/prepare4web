@@ -46,9 +46,9 @@ if [%DEBUG%]==[1] (
 %SRC_DRIVE%
 cd "%SRC_PATH%"
 if exist "%DST_DIR%" (
-	del "%DST_DIR%\%SRC_MASK%" /q
+	del "%DST_DIR%\%SRC_MASK%" /q 2>nul
 ) else (
-	md "%DST_DIR%" > nul
+	md "%DST_DIR%" 2>nul
 )
 
 if %PROCESS_MULTIPLE_FILES% == 1 (
