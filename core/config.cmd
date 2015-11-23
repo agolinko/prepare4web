@@ -5,7 +5,7 @@
 @echo off
 
 set CONFIGURED=1
-set DEBUG=1
+set DEBUG=0
 set IM_PATH=%~dp0bin\
 set SAVED_CURRENT_PATH=%~dp0
 
