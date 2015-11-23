@@ -66,7 +66,7 @@ echo Clearing EXIF....
   -artist -copyright -make -model ^
   -exposuretime -fnumber -exposureprogram -exposuremode -iso -shutterspeedvalue -aperturevalue -exposurecompensation -isospeed -meteringmode ^
   -datetimeoriginal -createdate ^
-  -FocalLength -FocalLengthIn35mmFormat -lensinfo -lensmake -lensmodel "%DST_DIR%\%SRC_MASK%" @>nul
+  -FocalLength -FocalLengthIn35mmFormat -lensinfo -lensmake -lensmodel "%DST_DIR%\%SRC_MASK%" 2>nul
 if %ERRORLEVEL% GEQ 1 goto error
 
 echo done.
